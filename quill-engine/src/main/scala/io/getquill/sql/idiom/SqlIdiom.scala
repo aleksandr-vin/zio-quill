@@ -69,11 +69,11 @@ trait SqlIdiom extends Idiom {
     (normalizedAst, stmt"$token")
   }
 
-  override def translate(ast: Ast)(implicit naming: NamingStrategy): (Ast, Statement) = {
+  override def translate(ast: Ast, topLevelQuat: Quat)(implicit naming: NamingStrategy): (Ast, Statement) = {
     doTranslate(ast, false)
   }
 
-  override def translateCached(ast: Ast)(implicit naming: NamingStrategy): (Ast, Statement) = {
+  override def translateCached(ast: Ast, topLevelQuat: Quat)(implicit naming: NamingStrategy): (Ast, Statement) = {
     doTranslate(ast, true)
   }
 

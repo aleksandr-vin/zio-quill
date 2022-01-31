@@ -52,6 +52,6 @@ object ExpandReturning {
     }
 
     implicit val namingStrategy: NamingStrategy = naming
-    deTuplified.map(v => idiom.translate(v))
+    deTuplified.map(v => idiom.translate(v, dePropertized.quat))
   }
 }
